@@ -31,7 +31,7 @@ async function run() {
         }
 
         const options = {
-            url: `https://api.phrase.com/${phraseProject}/uploads`,
+            url: `https://api.phrase.com/v2/projects${phraseProject}/uploads`,
             headers: {
                 Authorization: `token ${phraseToken}`
             }

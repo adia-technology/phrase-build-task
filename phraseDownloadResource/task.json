@@ -9,7 +9,7 @@
   "author": "Rafał Nowosielski <rafal@nowosielski.email>",
   "version": {
     "Major": 0,
-    "Minor": 6,
+    "Minor": 8,
     "Patch": 0
   },
   "instanceNameFormat": "Download file $(resourceFileName)",

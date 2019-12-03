@@ -25,7 +25,7 @@ nock('https://api.phrase.com:443',
             authorization: 'token 84eddb0b-b555-43e7-b2fd-68e7e7631c4e'
         }
     })
-    .post('/ff9c4c33-3526-4e01-a716-6cbf555bd7fc/uploads')
+    .post('/v2/projects/ff9c4c33-3526-4e01-a716-6cbf555bd7fc/uploads')
     .reply(200)
 
 tmr.run();

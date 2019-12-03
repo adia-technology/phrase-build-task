@@ -40,9 +40,13 @@ async function run() {
             console.log(`Written file ${resourceFileName}`)
         })
 
+        let phraseApiUrl = `/v2/projects/${phraseProject}/locales/${phraseProjectLocale}/download?file_format=${resourceType}&include_empty_translations=true`
+        if (phraseProjectFallbackLocale) {
+            phraseApiUrl += `&fallback_locale_id=${phraseProjectFallbackLocale}`
+        }
         const options = {
             hostname: 'api.phrase.com',
-            path: `/${phraseProject}/locales/${phraseProjectLocale}/download?file_format=${resourceType}&include_empty_translations=true&fallback_locale_id=${phraseProjectFallbackLocale}`,
+            path: phraseApiUrl,
             headers: {
                 Authorization: `token ${phraseToken}`
             }
