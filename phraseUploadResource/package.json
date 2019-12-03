@@ -1,0 +1,26 @@
+{
+  "name": "azure-dev-ops-phrase-integration",
+  "version": "1.0.0",
+  "description": "Build task for integrating translations with phrase",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && mocha tests/"
+  },
+  "author": "Rafał Nowosielski <rafal@nowosielski.email>",
+  "license": "ISC",
+  "dependencies": {
+    "@types/request": "^2.48.3",
+    "azure-pipelines-task-lib": "^2.9.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.14",
+    "@types/q": "^1.5.2",
+    "nock": "^11.7.0",
+    "sinon": "^7.5.0",
+    "stream-mock": "^2.0.5",
+    "sync-request": "^6.1.0"
+  }
+}
