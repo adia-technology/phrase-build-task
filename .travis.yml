@@ -7,6 +7,11 @@ before_install:
 stages:
 - test
 - build
+
+cache:
+  directories:
+    - ~/mycache
+  `
 jobs:
   include:
   - stage: test
@@ -15,8 +20,12 @@ jobs:
     script: "(cd phraseUploadResource && npm install && tsc && npm run test)"
   - stage: deploy
     script:
-    - "(cd phraseUploadResource && npm install --production && tsc)"
-    - "(cd phraseUploadResource && npm install --production && tsc)"
+    - (cd phraseDownloadResource && npm install && tsc)
+    - rm -rf phraseDownloadResource/node_modules
+    - (cd phraseDownloadResource && npm install --production)
+    - (cd phraseUploadResource && npm install && tsc)
+    - rm -rf phraseUploadResource/node_modules
+    - (cd phraseUploadResource && npm install --production)
     - tfx extension create --manifest-globs vss-extension.json
     deploy:
       provider: releases
