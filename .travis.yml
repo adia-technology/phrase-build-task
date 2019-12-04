@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+- stable
+before_install:
+- npm install -g typescript
+- npm install -g tfx-cli
+stages:
+- test
+- build
+jobs:
+  include:
+  - stage: test
+    script: "(cd phraseDownloadResource && npm install && tsc && npm run tests)"
+  - stage: test
+    script: "(cd phraseUploadResource && npm install && tsc && npm run tests)"
+  - stage: deploy
+    script:
+    - "(cd phraseUploadResource && npm install --production && tsc)"
+    - "(cd phraseUploadResource && npm install --production && tsc)"
+    - tfx extension create --manifest-globs vss-extension.json
+    deploy:
+      provider: releases
+      api_key:
+        secure: JW5OKPrvm3ygofixTUUXnfyTmSf/D6gFZivOMDF64XeVOk/8UfS+nfuv0NPw9lHx9FnF6xGu1oMSu/k1r3m7CVXikW+p9CMmVKsDHB4YntWf4P9ydMmimX04JsMFBWvGFUzfGl4lInXcDkDjSdiub9CbUAWe9G/u1UMYTzTUvjNYq8Lt1LvTtUwzE00gQPGCcFhtqBU469FIr2UAL5gMVrc1bKf41gSN9q5el0WYbojDeTZ+Sg6aZTZA0dOJVntRyllLugcHsD3ZRRutdVoX5qofP0su+k+3FoqnzK1iVwfq0Qjd/GsJSArXSx9nkIz35vRlbSwz/jsWAp2skXpOsFIb3EMoYO1qOhWnl+Zhe7rzBiUCFDAX8sfomMleGNDou9WXHjq+XKTTgGLqkAoePnxNSc2g1oR42xNJsKiDDuGW3q6U2VZBaXebUVP+3SIpbnsY4dVkTjBTt7U9jq7hWXob6VVWUI7rzm7+M5+bYVqye/TbCm/ai69SB67HOR7ghpXR2ciAOrtNKDRSJJ6mjHtxXbQcfHb82E1Gv+S4HC/sXgX5cLgDQZZHnnX6TrkEemlIWpwY7kdHPmMz6Ur3M8zCPqRpXFfoJb8rRQsQgb9IPxUE4ziWO7sAJyqGfjVSX1j18TpiIcL1GGAi7LnrP/DAB2xJCfZWb4B6FXHo0TI=
+      file: "*.vsix"
+      file_glob: true
+      skip_cleanup: true
+      on:
+        repo: adia-technology/phrase-build-task
