@@ -1,4 +1,4 @@
-# Azure Dev Ops extension: Phrase Buld tasks
+# Azure Dev Ops extension: Phrase Build tasks
 
 # Manual build steps
 

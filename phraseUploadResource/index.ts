@@ -31,7 +31,7 @@ async function run() {
         }
 
         const options = {
-            url: `https://api.phrase.com/v2/projects${phraseProject}/uploads`,
+            url: `https://api.phrase.com/v2/projects/${phraseProject}/uploads`,
             headers: {
                 Authorization: `token ${phraseToken}`
             }
@@ -48,7 +48,6 @@ async function run() {
         form.append('file', fs.createReadStream(`${resourceFileName}`));
         form.append('file_format', resourceType);
         form.append('locale_id', phraseProjectLocale);
-
     }
     catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);

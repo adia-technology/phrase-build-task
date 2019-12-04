@@ -2,7 +2,7 @@ import ma = require('azure-pipelines-task-lib/mock-answer');
 import tmrm = require('azure-pipelines-task-lib/mock-run');
 import path = require('path');
 import nock from 'nock'
-import {ObjectReadableMock, ObjectWritableMock} from 'stream-mock';
+import {ObjectReadableMock} from 'stream-mock';
 
 var sinon = require('sinon');
 var fs = require('fs');

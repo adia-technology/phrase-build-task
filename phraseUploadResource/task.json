@@ -9,10 +9,10 @@
   "author": "Rafał Nowosielski <rafal@nowosielski.email>",
   "version": {
     "Major": 0,
-    "Minor": 8,
+    "Minor": 9,
     "Patch": 0
   },
-  "instanceNameFormat": "Download file $(resourceFileName)",
+  "instanceNameFormat": "Upload file $(resourceFileName)",
   "inputs": [
     {
       "name": "phraseToken",
@@ -37,14 +37,6 @@
       "defaultValue": "",
       "required": true,
       "helpMarkDown": "Specify id of the locale in the project on phrase.com"
-    },
-    {
-      "name": "phraseProjectFallbackLocale",
-      "type": "string",
-      "label": "Fallbqack locale in the project on phrase.com",
-      "defaultValue": "",
-      "required": false,
-      "helpMarkDown": "Specify id of the fallback locale in the project on phrase.com"
     },
     {
       "name": "resourceFileName",

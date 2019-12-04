@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "phrase-build-tasks",
   "name": "Translations from phrase.com",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "publisher": "AdiaTechnology",
   "targets": [
     {
