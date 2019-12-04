@@ -10,7 +10,6 @@
   "author": "Rafał Nowosielski <rafal@nowosielski.email>",
   "license": "ISC",
   "dependencies": {
-    "@types/request": "^2.48.3",
     "azure-pipelines-task-lib": "^2.9.3",
     "request": "^2.88.0"
   },
@@ -18,6 +17,8 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.12.14",
     "@types/q": "^1.5.2",
+    "@types/request": "^2.48.3",
+    "mocha": "^6.2.2",
     "nock": "^11.7.0",
     "sinon": "^7.5.0",
     "stream-mock": "^2.0.5",
