@@ -7,17 +7,13 @@ before_install:
 stages:
 - test
 - build
-
-cache:
-  directories:
-    - ~/mycache
   `
 jobs:
   include:
   - stage: test
-    script: "(cd phraseDownloadResource && npm install && tsc && npm run test)"
+    script: (cd phraseDownloadResource && npm install && tsc && npm run test)
   - stage: test
-    script: "(cd phraseUploadResource && npm install && tsc && npm run test)"
+    script: (cd phraseUploadResource && npm install && tsc && npm run test)
   - stage: deploy
     script:
     - (cd phraseDownloadResource && npm install && tsc)
