@@ -3,7 +3,7 @@
   "id": "phrase-build-tasks",
   "name": "Translations from phrase.com",
   "description": "Extension provides tasks that make it easy to integrate with phrase.com, by making import and export of translation resources part of your build pipeline.",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "publisher": "AdiaTechnology",
   "targets": [
     {

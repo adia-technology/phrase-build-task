@@ -9,7 +9,7 @@
   "author": "Rafał Nowosielski <rafal@nowosielski.email>",
   "version": {
     "Major": 0,
-    "Minor": 10,
+    "Minor": 11,
     "Patch": 0
   },
   "instanceNameFormat": "Upload file $(resourceFileName)",
