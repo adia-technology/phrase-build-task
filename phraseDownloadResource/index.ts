@@ -54,7 +54,7 @@ async function run() {
         };
 
         const request = https.get(options, function(response) {
-            if (response.statusCode != HttpStatus.OK) {
+            if (response.statusCode == HttpStatus.OK) {
                 response.pipe(file);
             } else {
                 tl.setResult(tl.TaskResult.Failed, `Server returned status code: ${response.statusCode}`);

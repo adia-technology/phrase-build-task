@@ -41,10 +41,10 @@ async function run() {
         let req: request.Request = request.post(options, function (err, resp, body) {
             if (err) {
                 tl.setResult(tl.TaskResult.Failed, err.message);
-            } else if (resp && resp.statusCode) {
+            } else if (resp && resp.statusCode == HttpStatus.OK) {
                 console.log(`Uploaded file ${resourceFileName}`)
             } else {
-                tl.setResult(tl.TaskResult.Failed, "Unkonwn error occured");
+                tl.setResult(tl.TaskResult.Failed, "Unknown error occured");
             }
         });
         let form = req.form();
