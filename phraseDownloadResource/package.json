@@ -10,7 +10,8 @@
   "author": "Rafał Nowosielski <rafal@nowosielski.email>",
   "license": "ISC",
   "dependencies": {
-    "azure-pipelines-task-lib": "^2.9.3"
+    "azure-pipelines-task-lib": "^2.9.3",
+    "http-status-codes": "^1.4.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
