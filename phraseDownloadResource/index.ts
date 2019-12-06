@@ -1,6 +1,7 @@
 import tl = require('azure-pipelines-task-lib/task');
 import https = require('https');
 import fs = require('fs');
+import HttpStatus = require('http-status-codes');
 
 async function run() {
     try {
@@ -53,7 +54,11 @@ async function run() {
         };
 
         const request = https.get(options, function(response) {
-            response.pipe(file);
+            if (response.statusCode != HttpStatus.OK) {
+                response.pipe(file);
+            } else {
+                tl.setResult(tl.TaskResult.Failed, `Server returned status code: ${response.statusCode}`);
+            }
         });
 
     }

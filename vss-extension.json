@@ -24,6 +24,7 @@
       "path": "phraseUploadResource"
     }
   ],
+  "public": true,
   "contributions": [
     {
       "id": "phrase-task-download-resource",

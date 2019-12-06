@@ -1,6 +1,7 @@
 import tl = require('azure-pipelines-task-lib/task');
 import request = require('request');
 import fs = require('fs');
+import HttpStatus = require('http-status-codes');
 
 async function run() {
     try {
@@ -40,8 +41,10 @@ async function run() {
         let req: request.Request = request.post(options, function (err, resp, body) {
             if (err) {
                 tl.setResult(tl.TaskResult.Failed, err.message);
-            } else {
+            } else if (resp && resp.statusCode) {
                 console.log(`Uploaded file ${resourceFileName}`)
+            } else {
+                tl.setResult(tl.TaskResult.Failed, "Unkonwn error occured");
             }
         });
         let form = req.form();
