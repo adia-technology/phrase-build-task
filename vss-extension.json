@@ -27,7 +27,7 @@
   ],
   "public": true,
   "contributions": [
-    {
+    { 
       "id": "phrase-task-download-resource",
       "type": "ms.vss-distributed-task.task",
       "targets": [
