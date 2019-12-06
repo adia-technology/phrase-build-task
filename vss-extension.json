@@ -26,6 +26,11 @@
     }
   ],
   "public": true,
+  "content": {
+    "details": {
+      "path": "overview.md"
+    }
+  },
   "contributions": [
     {
       "id": "phrase-task-download-resource",
